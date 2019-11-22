@@ -62,8 +62,8 @@ struct Number {
     }
     
     private func valueRounded(_ value: Double, toPlaces decimalPlaces: Int) -> Double {
-        let ratio = pow(10.0, Double(decimalPlaces))
-        return Double(round(ratio * value) / ratio)
+        let divisor = pow(10.0, Double(decimalPlaces))
+        return Double(round(divisor * value) / divisor)
     }
 }
 
@@ -148,3 +148,39 @@ class NumberTests: XCTestCase {
 }
 
 NumberTests.defaultTestSuite.run()
+
+enum Operation {
+    case add, subtract, multiply, divide
+}
+
+struct Calculator {
+
+    private(set) var result: Number = Number()
+    private(set) var input: Number = Number()
+    private(set) var operation: Operation?
+
+    init() {
+
+    }
+
+    mutating func append(digit: Digit) {
+        input.append(digit: digit)
+    }
+
+    mutating func append(operation: Operation) {
+        self.operation = operation
+    }
+
+    private func calculate(first: Number, operation: Operation, second: Number) -> Number {
+        switch operation {
+        case .add:
+            return Number()
+        case .subtract:
+            return Number()
+        case .multiply:
+            return Number()
+        case .divide:
+            return Number()
+        }
+    }
+}
