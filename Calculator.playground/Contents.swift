@@ -18,10 +18,17 @@ enum Digit: Int {
 }
 
 struct Number {
+    
+    // MARK: - Properties
+    
     private var digits: [Digit] = []
+    
+    // MARK: - Lifecycle
     
     init() {
     }
+    
+    // MARK: - Number modification
     
     mutating func append(digit: Digit) {
         if digit == .zero && digits.count == 0 {
@@ -31,6 +38,12 @@ struct Number {
             return
         }
         digits.append(digit)
+    }
+    
+    // MARK: - Number info
+    
+    var isValidNumber: Bool {
+        return digits.count > 0
     }
     
     var value: Double {
@@ -154,22 +167,49 @@ enum Operation {
 }
 
 struct Calculator {
+    
+    // MARK: - Properties
 
     private(set) var result: Number = Number()
     private(set) var input: Number = Number()
     private(set) var operation: Operation?
+    
+    // MARK: - Lifecycle
 
     init() {
-
+        
     }
+    
+    // MARK: - Calculator inputs
 
     mutating func append(digit: Digit) {
         input.append(digit: digit)
     }
 
     mutating func append(operation: Operation) {
+        if result.isValidNumber, input.isValidNumber, let existingOperation = self.operation {
+            result = calculate(first: result, operation: existingOperation, second: input)
+        }
+        clearEntry()
         self.operation = operation
     }
+    
+    mutating func equal() {
+        guard let operation = operation else { return }
+        result = calculate(first: result, operation: operation, second: input)
+    }
+    
+    mutating func allClear() {
+        result = Number()
+        operation = nil
+        clearEntry()
+    }
+    
+    mutating func clearEntry() {
+        input = Number()
+    }
+    
+    // MARK: - Logic
 
     private func calculate(first: Number, operation: Operation, second: Number) -> Number {
         switch operation {
