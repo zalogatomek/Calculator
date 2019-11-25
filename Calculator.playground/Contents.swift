@@ -21,11 +21,15 @@ struct Number {
     
     // MARK: - Properties
     
-    private var digits: [Digit] = []
+    private var isNegative: Bool
+    private var digits: [Digit]
+    
     
     // MARK: - Lifecycle
     
-    init() {
+    init(isNegative: Bool = false, digits: [Digit] = []) {
+        self.isNegative = isNegative
+        self.digits = digits
     }
     
     // MARK: - Number modification
@@ -55,7 +59,8 @@ struct Number {
             value += Double(digit.rawValue) * pow(10.0, Double(exponent))
         }
         
-        return valueRounded(value, toPlaces: decimalPlaces)
+        let rounded = value.rounded(toPlaces: decimalPlaces)
+        return isNegative ? -rounded : rounded
     }
     
     private func exponent(at index: Int) -> Int? {
@@ -69,14 +74,18 @@ struct Number {
         }
     }
     
-    private var decimalPlaces: Int {
+    var decimalPlaces: Int {
         let separatorIndex = digits.firstIndex(of: .separator) ?? digits.count
         return max(0, digits.count - separatorIndex - 1)
     }
-    
-    private func valueRounded(_ value: Double, toPlaces decimalPlaces: Int) -> Double {
+}
+
+// MARK: - Double + Round
+
+extension Double {
+    func rounded(toPlaces decimalPlaces: Int) -> Double {
         let divisor = pow(10.0, Double(decimalPlaces))
-        return Double(round(divisor * value) / divisor)
+        return (self * divisor).rounded() / divisor
     }
 }
 
@@ -210,17 +219,55 @@ struct Calculator {
     }
     
     // MARK: - Logic
+    
+    private var maxDecimalPlaces: Int = 8
 
     private func calculate(first: Number, operation: Operation, second: Number) -> Number {
         switch operation {
         case .add:
-            return Number()
+            let decimalPlaces = max(first.decimalPlaces, second.decimalPlaces, maxDecimalPlaces)
+            let value = (first.value + second.value).rounded(toPlaces: decimalPlaces)
+            return NumberFactory.create(value: value)
         case .subtract:
-            return Number()
+            let decimalPlaces = max(first.decimalPlaces, second.decimalPlaces, maxDecimalPlaces)
+            let value = (first.value - second.value).rounded(toPlaces: decimalPlaces)
+            return NumberFactory.create(value: value)
         case .multiply:
-            return Number()
+            let decimalPlaces = max(first.decimalPlaces + second.decimalPlaces, maxDecimalPlaces)
+            let value = (first.value * second.value).rounded(toPlaces: decimalPlaces)
+            return NumberFactory.create(value: value)
         case .divide:
-            return Number()
+            let decimalPlaces = maxDecimalPlaces
+            let value = (first.value / second.value).rounded(toPlaces: decimalPlaces)
+            return NumberFactory.create(value: value)
         }
+    }
+}
+
+struct NumberFactory {
+    static func create(value: Double) -> Number {
+        let stringValue = "\(value)"
+        var number: Number = Number(isNegative: value < 0.0)
+        
+        stringValue.forEach { (character) in
+            let intValue = character.toInt() ?? Digit.separator.rawValue
+            number.append(digit: Digit(rawValue: intValue) ?? .separator)
+        }
+        
+        return number
+    }
+}
+
+// MARK: - String + Int
+
+extension String {
+    func toInt() -> Int? {
+        return Int(self)
+    }
+}
+
+extension String.Element {
+    func toInt() -> Int? {
+        return "\(self)".toInt()
     }
 }
