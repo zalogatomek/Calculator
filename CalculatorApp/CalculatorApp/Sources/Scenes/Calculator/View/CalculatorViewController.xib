@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorViewController" customModule="CalculatorApp" customModuleProvider="target">
+            <connections>
+                <outlet property="resultLabel" destination="4GE-Dz-Jpt" id="Zj1-5n-kxS"/>
+                <outlet property="view" destination="iN0-l3-epB" id="LmP-4z-LO4"/>
+                <outletCollection property="buttons" destination="S2o-A7-UhX" collectionClass="NSMutableArray" id="4T8-eV-lGU"/>
+                <outletCollection property="buttons" destination="MSA-pY-P67" collectionClass="NSMutableArray" id="0vj-ob-KMy"/>
+                <outletCollection property="buttons" destination="98q-c7-QsC" collectionClass="NSMutableArray" id="FaK-tQ-ghz"/>
+                <outletCollection property="buttons" destination="cO4-B8-6KI" collectionClass="NSMutableArray" id="8RJ-Mz-zbo"/>
+                <outletCollection property="buttons" destination="JjQ-ZC-z9r" collectionClass="NSMutableArray" id="o5H-1Z-Yth"/>
+                <outletCollection property="buttons" destination="3ij-Af-TYh" collectionClass="NSMutableArray" id="Rqb-rO-tdO"/>
+                <outletCollection property="buttons" destination="z2h-4B-kOY" collectionClass="NSMutableArray" id="Wfu-Lt-QGg"/>
+                <outletCollection property="buttons" destination="kgl-hy-INM" collectionClass="NSMutableArray" id="xep-MD-bBQ"/>
+                <outletCollection property="buttons" destination="VgY-Nl-GsO" collectionClass="NSMutableArray" id="t35-ds-qCa"/>
+                <outletCollection property="buttons" destination="Dfk-jo-MVi" collectionClass="NSMutableArray" id="hxf-AT-ZUO"/>
+                <outletCollection property="buttons" destination="28T-EI-jgu" collectionClass="NSMutableArray" id="fDc-MY-UtQ"/>
+                <outletCollection property="buttons" destination="i4z-zo-9v7" collectionClass="NSMutableArray" id="UVx-f4-Ydj"/>
+                <outletCollection property="buttons" destination="oIw-9y-bAa" collectionClass="NSMutableArray" id="AwR-LH-S4i"/>
+                <outletCollection property="buttons" destination="yia-aX-bIY" collectionClass="NSMutableArray" id="vZg-DD-Ym9"/>
+                <outletCollection property="buttons" destination="teO-Ke-z8A" collectionClass="NSMutableArray" id="Rt2-IL-r7m"/>
+                <outletCollection property="buttons" destination="Tf0-Ss-oEk" collectionClass="NSMutableArray" id="vca-fw-csC"/>
+                <outletCollection property="buttons" destination="JAQ-1K-Zgh" collectionClass="NSMutableArray" id="MJX-pB-wux"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AAo-ch-7yJ">
+                    <rect key="frame" x="20" y="44" width="374" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="200" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GE-Dz-Jpt">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="129.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-M2-2Zv">
+                            <rect key="frame" x="0.0" y="137.5" width="374" height="130"/>
+                            <subviews>
+                                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAQ-1K-Zgh" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="278.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="AC"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="ZXJ-mh-4fO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-Ss-oEk" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="/"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="JE5-B2-zGy"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ULf-zk-siP">
+                            <rect key="frame" x="0.0" y="275.5" width="374" height="129.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgl-hy-INM" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="7"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="TTI-qH-kTZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgY-Nl-GsO" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="8"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="oLK-XP-FYm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-jo-MVi" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="9"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="aPF-cb-f3J"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teO-Ke-z8A" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="x"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="GxP-7V-zc4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nb-yXv">
+                            <rect key="frame" x="0.0" y="413" width="374" height="129.5"/>
+                            <subviews>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjQ-ZC-z9r" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="4"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="1YY-aR-Aai"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ij-Af-TYh" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="5"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="3Qc-JH-ktv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2h-4B-kOY" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="6"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="mev-BH-RQt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yia-aX-bIY" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="-"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="y2m-IA-Jz4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eXp-FY-iwD">
+                            <rect key="frame" x="0.0" y="550.5" width="374" height="130"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSA-pY-P67" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="1"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="4Zf-Fx-RSM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98q-c7-QsC" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="2"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="CbD-Zt-XBj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-B8-6KI" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="3"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="sQK-Fg-LY7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIw-9y-bAa" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="130"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="+"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="APv-pk-KgO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-G6-dM9">
+                            <rect key="frame" x="0.0" y="688.5" width="374" height="129.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2o-A7-UhX" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="0"/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="OUe-0g-2k9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28T-EI-jgu" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <state key="normal" title=","/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="q3C-ja-EwT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-zo-9v7" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <state key="normal" title="="/>
+                                    <connections>
+                                        <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="hv6-jC-enk"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="28T-EI-jgu" firstAttribute="width" secondItem="i4z-zo-9v7" secondAttribute="width" id="fx9-83-kpO"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Tf0-Ss-oEk" firstAttribute="width" secondItem="Dfk-jo-MVi" secondAttribute="width" id="Wf6-wp-8dS"/>
+                        <constraint firstItem="28T-EI-jgu" firstAttribute="width" secondItem="cO4-B8-6KI" secondAttribute="width" id="yww-kS-knu"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AAo-ch-7yJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="VIk-wC-x4r"/>
+                <constraint firstAttribute="trailingMargin" secondItem="AAo-ch-7yJ" secondAttribute="trailing" id="WQA-l9-WJx"/>
+                <constraint firstItem="AAo-ch-7yJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="doz-dT-Bau"/>
+                <constraint firstAttribute="bottomMargin" secondItem="AAo-ch-7yJ" secondAttribute="bottom" id="vrj-QH-fnn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="131"/>
+        </view>
+    </objects>
+</document>

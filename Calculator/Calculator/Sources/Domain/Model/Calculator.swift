@@ -12,9 +12,9 @@ public struct Calculator {
     
     // MARK: - Properties
 
-    private(set) var result: Number = Number()
-    private(set) var input: Number = Number()
-    private(set) var operation: OperationType?
+    private(set) public var result: Number = Number()
+    private(set) public var input: Number = Number()
+    private(set) public var operation: OperationType?
     
     // MARK: - Lifecycle
 
