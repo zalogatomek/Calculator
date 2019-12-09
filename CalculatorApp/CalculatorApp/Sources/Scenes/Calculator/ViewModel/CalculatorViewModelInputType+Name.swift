@@ -12,6 +12,8 @@ extension CalculatorViewModel.InputType {
     
     var name: String {
         switch self {
+        case .digit(let digit) where digit == .separator:
+            return "."
         case .digit(let digit):
             return "\(digit.rawValue)"
         case .operation(let operationType):

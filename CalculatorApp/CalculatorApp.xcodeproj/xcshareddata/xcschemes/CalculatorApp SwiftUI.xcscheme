@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65C66759239E7166004916AC"
                BuildableName = "Calculator App.app"
-               BlueprintName = "CalculatorApp-SwiftUI"
+               BlueprintName = "CalculatorApp SwiftUI"
                ReferencedContainer = "container:CalculatorApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65C66759239E7166004916AC"
             BuildableName = "Calculator App.app"
-            BlueprintName = "CalculatorApp-SwiftUI"
+            BlueprintName = "CalculatorApp SwiftUI"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65C66759239E7166004916AC"
             BuildableName = "Calculator App.app"
-            BlueprintName = "CalculatorApp-SwiftUI"
+            BlueprintName = "CalculatorApp SwiftUI"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
