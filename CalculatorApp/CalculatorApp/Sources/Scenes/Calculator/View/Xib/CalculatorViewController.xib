@@ -38,17 +38,36 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AAo-ch-7yJ">
                     <rect key="frame" x="20" y="44" width="374" height="818"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgP-MM-c4w">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="110"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-xs-CH6">
+                                    <rect key="frame" x="87" y="38.5" width="200" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="NQP-0p-6QE"/>
+                                        <constraint firstAttribute="width" secondItem="UX1-xs-CH6" secondAttribute="height" multiplier="6:1" id="ekV-Pb-nX6"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="UX1-xs-CH6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KgP-MM-c4w" secondAttribute="leading" id="0NS-90-ACG"/>
+                                <constraint firstItem="UX1-xs-CH6" firstAttribute="centerY" secondItem="KgP-MM-c4w" secondAttribute="centerY" id="6GN-bQ-VSg"/>
+                                <constraint firstItem="UX1-xs-CH6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KgP-MM-c4w" secondAttribute="top" id="Lz8-XN-8W5"/>
+                                <constraint firstItem="UX1-xs-CH6" firstAttribute="centerX" secondItem="KgP-MM-c4w" secondAttribute="centerX" id="gf4-Ab-0lR"/>
+                            </constraints>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="200" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GE-Dz-Jpt">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="129.5"/>
+                            <rect key="frame" x="0.0" y="118" width="374" height="110"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-M2-2Zv">
-                            <rect key="frame" x="0.0" y="137.5" width="374" height="130"/>
+                            <rect key="frame" x="0.0" y="236" width="374" height="110"/>
                             <subviews>
                                 <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAQ-1K-Zgh" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="278.5" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="278.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="AC"/>
                                     <connections>
@@ -56,7 +75,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-Ss-oEk" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="130"/>
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="/"/>
                                     <connections>
@@ -66,10 +85,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ULf-zk-siP">
-                            <rect key="frame" x="0.0" y="275.5" width="374" height="129.5"/>
+                            <rect key="frame" x="0.0" y="354" width="374" height="110"/>
                             <subviews>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgl-hy-INM" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="7"/>
                                     <connections>
@@ -77,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgY-Nl-GsO" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="8"/>
                                     <connections>
@@ -85,7 +104,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-jo-MVi" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="9"/>
                                     <connections>
@@ -93,7 +112,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teO-Ke-z8A" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="x"/>
                                     <connections>
@@ -103,10 +122,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IJx-nb-yXv">
-                            <rect key="frame" x="0.0" y="413" width="374" height="129.5"/>
+                            <rect key="frame" x="0.0" y="472" width="374" height="110"/>
                             <subviews>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjQ-ZC-z9r" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="4"/>
                                     <connections>
@@ -114,7 +133,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ij-Af-TYh" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="5"/>
                                     <connections>
@@ -122,7 +141,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2h-4B-kOY" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="6"/>
                                     <connections>
@@ -130,7 +149,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yia-aX-bIY" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="-"/>
                                     <connections>
@@ -140,10 +159,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eXp-FY-iwD">
-                            <rect key="frame" x="0.0" y="550.5" width="374" height="130"/>
+                            <rect key="frame" x="0.0" y="590" width="374" height="110"/>
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSA-pY-P67" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="1"/>
                                     <connections>
@@ -151,7 +170,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98q-c7-QsC" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="130"/>
+                                    <rect key="frame" x="95.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="2"/>
                                     <connections>
@@ -159,7 +178,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-B8-6KI" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="87.5" height="130"/>
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="3"/>
                                     <connections>
@@ -167,7 +186,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIw-9y-bAa" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="130"/>
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="+"/>
                                     <connections>
@@ -177,10 +196,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-G6-dM9">
-                            <rect key="frame" x="0.0" y="688.5" width="374" height="129.5"/>
+                            <rect key="frame" x="0.0" y="708" width="374" height="110"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2o-A7-UhX" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="183" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="0"/>
                                     <connections>
@@ -188,14 +207,14 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28T-EI-jgu" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="191" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="191" y="0.0" width="87.5" height="110"/>
                                     <state key="normal" title=","/>
                                     <connections>
                                         <action selector="onButtonTapped:" destination="-1" eventType="touchUpInside" id="q3C-ja-EwT"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-zo-9v7" customClass="CalculatorButton" customModule="CalculatorApp" customModuleProvider="target">
-                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="129.5"/>
+                                    <rect key="frame" x="286.5" y="0.0" width="87.5" height="110"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <state key="normal" title="="/>
                                     <connections>
@@ -225,4 +244,7 @@
             <point key="canvasLocation" x="139" y="131"/>
         </view>
     </objects>
+    <resources>
+        <image name="Logo" width="117.5" height="18.5"/>
+    </resources>
 </document>

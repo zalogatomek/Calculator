@@ -22,7 +22,7 @@ class CalculatorViewModel {
     
     // MARK: - Input
     
-    enum InputType {
+    enum InputType: Hashable {
         case digit(Digit)
         case operation(OperationType)
         case equal
