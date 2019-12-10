@@ -14,6 +14,12 @@ class CalculatorViewModel {
     
     private var calculator: Calculator = Calculator()
     
+    private var numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = Int.max
+        return numberFormatter
+    }()
+    
     // MARK: - Lifecycle
     
     init() {
@@ -55,10 +61,12 @@ class CalculatorViewModel {
     // MARK: - Output updates
     
     private func updateResult() {
+        let number: NSNumber
         if calculator.input.isValidNumber {
-            result = "\(calculator.input.value)"
+            number = NSNumber(value: calculator.input.value)
         } else {
-            result = "\(calculator.result.value)"
+            number = NSNumber(value: calculator.result.value)
         }
+        result = numberFormatter.string(from: number) ?? "0"
     }
 }
