@@ -399,6 +399,13 @@
 			path = "SwiftUI Combine";
 			sourceTree = "<group>";
 		};
+		65CB3C61239FE98E00B5CC29 /* CalculatorContent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CalculatorContent;
+			sourceTree = "<group>";
+		};
 		9A5F400F23959CE5005C24CB = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				9A904BC92396F1D900177687 /* Buttons */,
+				65CB3C61239FE98E00B5CC29 /* CalculatorContent */,
 			);
 			path = View;
 			sourceTree = "<group>";
