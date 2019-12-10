@@ -10,6 +10,11 @@ import SwiftUI
 
 struct CalculatorView: View {
     
+    // MARK: - Configuration
+    
+    private let rowSpacing: CGFloat = 8.0
+    private let columnSpacing: CGFloat = 8.0
+    
     // MARK: - Calculator buttons
     
     let rows: [[CalculatorViewModel.InputType]] = [
@@ -24,8 +29,7 @@ struct CalculatorView: View {
         .operation(.divide), .digit(.separator), .equal
     ]
     
-    private let rowSpacing: CGFloat = 8.0
-    private let columnSpacing: CGFloat = 8.0
+    // MARK: - Body
     
     var body: some View {
         ZStack {
@@ -35,8 +39,9 @@ struct CalculatorView: View {
             VStack(alignment: .center, spacing: rowSpacing) {
                 ZStack {
                     Image("Logo")
+                        .resizable()
                         .aspectRatio(6, contentMode: .fit)
-                        .frame(width: 200.0, height: nil, alignment: .center)
+                        .frame(width: 200.0, height: nil)
                 }
                 
                 Text("Result")
@@ -49,9 +54,11 @@ struct CalculatorView: View {
                 ForEach(rows, id: \.self) { row in
                     GeometryReader { geometry in
                         HStack(alignment: .center, spacing: self.columnSpacing) {
-                            ForEach(row, id: \CalculatorViewModel.InputType.name) {
-                                CalculatorButtonWrapper(inputType: $0)
-                                    .frame(width: self.widthForButton(inRow: row, withType: $0, geometry: geometry))
+                            ForEach(row, id: \CalculatorViewModel.InputType.name) { inputType in
+                                CalculatorButtonRepresentable(inputType: inputType, action: {
+                                    
+                                })
+                                .frame(width: self.widthForButton(inRow: row, withType: inputType, geometry: geometry))
                             }
                         }
                     }
@@ -60,6 +67,8 @@ struct CalculatorView: View {
             .padding()
         }
     }
+    
+    // MARK: - Tools
     
     private func widthForButton(inRow row: [CalculatorViewModel.InputType],
                                 withType inputType: CalculatorViewModel.InputType,
@@ -82,23 +91,5 @@ struct CalculatorView: View {
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         CalculatorView()
-    }
-}
-
-struct CalculatorButtonWrapper: UIViewRepresentable {
-    
-    // MARK: - Properties
-    
-    var inputType: CalculatorViewModel.InputType
-    
-    // MARK: - UIViewRepresentable
-    
-    func makeUIView(context: Context) -> CalculatorButton {
-        return CalculatorButton()
-    }
-
-    func updateUIView(_ uiView: CalculatorButton, context: Context) {
-        uiView.kind = CalculatorButtonKindMapper.map(inputType: inputType)
-        uiView.setTitle(inputType.name, for: .normal)
     }
 }
