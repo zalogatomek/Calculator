@@ -10,12 +10,7 @@ import UIKit
 
 struct CalculatorButtonKindMapper {
     
-    static func map(tag: Int) -> CalculatorButton.Kind {
-        let inputType = CalculatorViewModelInputTypeMapper.map(tag: tag)
-        return map(inputType: inputType)
-    }
-    
-    static func map(inputType: CalculatorViewModel.InputType?) -> CalculatorButton.Kind {
+    static func map(inputType: CalculatorInputType?) -> CalculatorButton.Kind {
         switch inputType {
         case .digit: return .digit
         case .operation, .equal: return .operation

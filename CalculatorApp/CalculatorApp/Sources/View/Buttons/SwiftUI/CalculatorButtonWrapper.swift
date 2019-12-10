@@ -12,7 +12,8 @@ struct CalculatorButtonRepresentable: UIViewRepresentable {
     
     // MARK: - Properties
     
-    var inputType: CalculatorViewModel.InputType
+    var name: String
+    var kind: CalculatorButton.Kind
     var action: () -> Void
     
     // MARK: - UIViewRepresentable
@@ -27,8 +28,8 @@ struct CalculatorButtonRepresentable: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: CalculatorButton, context: Context) {
-        uiView.kind = CalculatorButtonKindMapper.map(inputType: inputType)
-        uiView.setTitle(inputType.name, for: .normal)
+        uiView.setTitle(name, for: .normal)
+        uiView.kind = kind
     }
     
     // MARK: - Coordinator

@@ -8,7 +8,7 @@
 
 import Calculator
 
-struct CalculatorViewModelInputTypeMapper {
+struct CalculatorInputTypeMapper {
     
     private enum Tag: Int {
         case equal = 10
@@ -19,7 +19,7 @@ struct CalculatorViewModelInputTypeMapper {
         case allClear = 15
     }
     
-    static func map(tag: Int) -> CalculatorViewModel.InputType? {
+    static func map(tag: Int) -> CalculatorInputType? {
         if let digit = Digit(rawValue: tag) {
             return .digit(digit)
         } else if let tag = Tag(rawValue: tag) {

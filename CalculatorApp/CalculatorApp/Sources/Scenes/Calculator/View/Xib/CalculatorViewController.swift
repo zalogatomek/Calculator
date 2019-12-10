@@ -10,6 +10,13 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
+    // MARK: - Configuration
+    
+    private let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 20.0,
+                                                        left: 20.0,
+                                                        bottom: 20.0,
+                                                        right: 20.0)
+    
     // MARK: - Properties
     
     @IBOutlet private var resultLabel: UILabel!
@@ -34,11 +41,17 @@ class CalculatorViewController: UIViewController {
     }
     
     private func setupDesign() {
-        view.layoutMargins = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+        view.layoutMargins = edgeInsets
         view.backgroundColor = ThemeStore.current.backgroundColor
         resultLabel.textColor = ThemeStore.current.textLight
-        buttons.forEach {
-            $0.kind = CalculatorButtonKindMapper.map(tag: $0.tag)
+        setupButtons()
+    }
+    
+    private func setupButtons() {
+        buttons.forEach { button in
+            let inputType = CalculatorInputTypeMapper.map(tag: button.tag)
+            button.setTitle(inputType?.name, for: .normal)
+            button.kind = CalculatorButtonKindMapper.map(inputType: inputType)
         }
     }
     
@@ -52,7 +65,7 @@ class CalculatorViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction private func onButtonTapped(_ button: UIButton) {
-        guard let input = CalculatorViewModelInputTypeMapper.map(tag: button.tag) else { return }
+        guard let input = CalculatorInputTypeMapper.map(tag: button.tag) else { return }
         viewModel.append(input)
     }
     

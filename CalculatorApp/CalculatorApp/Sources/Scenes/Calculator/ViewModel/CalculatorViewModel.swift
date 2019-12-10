@@ -28,14 +28,7 @@ class CalculatorViewModel {
     
     // MARK: - Input
     
-    enum InputType: Hashable {
-        case digit(Digit)
-        case operation(OperationType)
-        case equal
-        case allClear
-    }
-    
-    func append(_ inputType: InputType) {
+    func append(_ inputType: CalculatorInputType) {
         switch inputType {
         case .digit(let digit):
             calculator.append(digit: digit)
