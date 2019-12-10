@@ -12,10 +12,7 @@ class CalculatorViewController: UIViewController {
     
     // MARK: - Configuration
     
-    private let edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 20.0,
-                                                        left: 20.0,
-                                                        bottom: 20.0,
-                                                        right: 20.0)
+    private let padding: CGFloat = 20.0
     
     // MARK: - Properties
     
@@ -41,7 +38,7 @@ class CalculatorViewController: UIViewController {
     }
     
     private func setupDesign() {
-        view.layoutMargins = edgeInsets
+        view.layoutMargins = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
         view.backgroundColor = ThemeStore.current.backgroundColor
         resultLabel.textColor = ThemeStore.current.textLight
         setupButtons()
