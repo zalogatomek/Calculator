@@ -15,6 +15,20 @@ struct CalculatorView: View {
     private let rowSpacing: CGFloat = 8.0
     private let columnSpacing: CGFloat = 8.0
     
+    // MARK: - ViewModel
+    
+    private let viewModel = CalculatorViewModel()
+    @State private var result: String = ""
+    
+    // MARK: - Lifecycle
+    
+    private func bindViewModel() {
+        result = viewModel.result
+        viewModel.onResultChanged = { result in
+            self.result = result
+        }
+    }
+    
     // MARK: - Calculator buttons
     
     let rows: [[CalculatorViewModel.InputType]] = [
@@ -44,7 +58,7 @@ struct CalculatorView: View {
                         .frame(width: 200.0, height: nil)
                 }
                 
-                Text("Result")
+                Text(result)
                     .font(.title)
                     .foregroundColor(Color(ThemeStore.current.textLight))
                     .frame(minWidth: 0.0, maxWidth: .infinity,
@@ -56,7 +70,7 @@ struct CalculatorView: View {
                         HStack(alignment: .center, spacing: self.columnSpacing) {
                             ForEach(row, id: \CalculatorViewModel.InputType.name) { inputType in
                                 CalculatorButtonRepresentable(inputType: inputType, action: {
-                                    
+                                    self.viewModel.append(inputType)
                                 })
                                 .frame(width: self.widthForButton(inRow: row, withType: inputType, geometry: geometry))
                             }
@@ -65,6 +79,9 @@ struct CalculatorView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            self.bindViewModel()
         }
     }
     
