@@ -31,6 +31,9 @@
 		65CB3BDB239FCC3D00B5CC29 /* CalculatorViewControllerRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB3BDA239FCC3D00B5CC29 /* CalculatorViewControllerRx.swift */; };
 		65CB3BDD239FCF7500B5CC29 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A904BC42396F04200177687 /* CalculatorViewController.swift */; };
 		65CB3BDF239FCF8C00B5CC29 /* CalculatorViewControllerRx.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CB3BDE239FCF8C00B5CC29 /* CalculatorViewControllerRx.xib */; };
+		65CB3BE3239FD1DF00B5CC29 /* CalculatorViewRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB3BE2239FD1DF00B5CC29 /* CalculatorViewRx.swift */; };
+		65CB3BE7239FD37600B5CC29 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 65CB3BE6239FD37600B5CC29 /* RxCocoa */; };
+		65CB3BE9239FD37600B5CC29 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 65CB3BE8239FD37600B5CC29 /* RxSwift */; };
 		9A5F401C23959CE5005C24CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F401B23959CE5005C24CB /* AppDelegate.swift */; };
 		9A5F402523959CE7005C24CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F402423959CE7005C24CB /* Assets.xcassets */; };
 		9A5F402823959CE7005C24CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A5F402623959CE7005C24CB /* LaunchScreen.storyboard */; };
@@ -114,6 +117,7 @@
 		65CB3BD5239FC3E500B5CC29 /* CalculatorViewModelRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelRx.swift; sourceTree = "<group>"; };
 		65CB3BDA239FCC3D00B5CC29 /* CalculatorViewControllerRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewControllerRx.swift; sourceTree = "<group>"; };
 		65CB3BDE239FCF8C00B5CC29 /* CalculatorViewControllerRx.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewControllerRx.xib; sourceTree = "<group>"; };
+		65CB3BE2239FD1DF00B5CC29 /* CalculatorViewRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewRx.swift; sourceTree = "<group>"; };
 		9A5F401823959CE5005C24CB /* Calculator App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculator App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5F401B23959CE5005C24CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A5F402423959CE7005C24CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CB3BE9239FD37600B5CC29 /* RxSwift in Frameworks */,
+				65CB3BE7239FD37600B5CC29 /* RxCocoa in Frameworks */,
 				65C66764239E7166004916AC /* Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +241,14 @@
 				65CB3BDE239FCF8C00B5CC29 /* CalculatorViewControllerRx.xib */,
 			);
 			path = XibRx;
+			sourceTree = "<group>";
+		};
+		65CB3BE1239FD1BC00B5CC29 /* SwiftUIRx */ = {
+			isa = PBXGroup;
+			children = (
+				65CB3BE2239FD1DF00B5CC29 /* CalculatorViewRx.swift */,
+			);
+			path = SwiftUIRx;
 			sourceTree = "<group>";
 		};
 		9A5F400F23959CE5005C24CB = {
@@ -379,6 +393,7 @@
 				65C66772239E71B7004916AC /* Xib */,
 				65CB3BD9239FCBDA00B5CC29 /* XibRx */,
 				65C66773239E71D2004916AC /* SwitUI */,
+				65CB3BE1239FD1BC00B5CC29 /* SwiftUIRx */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +453,10 @@
 			dependencies = (
 			);
 			name = "CalculatorApp SwiftUI";
+			packageProductDependencies = (
+				65CB3BE6239FD37600B5CC29 /* RxCocoa */,
+				65CB3BE8239FD37600B5CC29 /* RxSwift */,
+			);
 			productName = Calculator;
 			productReference = 65C6676E239E7166004916AC /* Calculator App.app */;
 			productType = "com.apple.product-type.application";
@@ -585,6 +604,7 @@
 			files = (
 				65C6675B239E7166004916AC /* CalculatorButtonKindMapper.swift in Sources */,
 				65C667B1239E7299004916AC /* SceneDelegate.swift in Sources */,
+				65CB3BE3239FD1DF00B5CC29 /* CalculatorViewRx.swift in Sources */,
 				65C6675E239E7166004916AC /* Theme.swift in Sources */,
 				65C6675F239E7166004916AC /* UIColor+Hex.swift in Sources */,
 				65C66760239E7166004916AC /* CalculatorViewModel.swift in Sources */,
@@ -948,6 +968,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 65CB3BCF239FC37500B5CC29 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		65CB3BE6239FD37600B5CC29 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65CB3BCF239FC37500B5CC29 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		65CB3BE8239FD37600B5CC29 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65CB3BCF239FC37500B5CC29 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
