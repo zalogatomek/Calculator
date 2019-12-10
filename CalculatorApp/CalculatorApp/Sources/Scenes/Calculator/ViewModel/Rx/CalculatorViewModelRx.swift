@@ -15,6 +15,7 @@ struct CalculatorViewModelRx {
     // MARK: - Properties
     
     private let viewModel: CalculatorViewModel = CalculatorViewModel()
+    private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
@@ -27,6 +28,11 @@ struct CalculatorViewModelRx {
         viewModel.onResultChanged = { result in
             self.result.accept(result)
         }
+        
+        input.subscribe(onNext: { (inputType) in
+            self.viewModel.append(inputType)
+        })
+        .disposed(by: disposeBag)
     }
     
     // MARK: - Input
