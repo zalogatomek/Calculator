@@ -1,5 +1,5 @@
 //
-//  CalculatorViewRx.swift
+//  CalculatorView.swift
 //  CalculatorAppSwiftUI
 //
 //  Created by Tomasz Załoga on 10/12/2019.
@@ -10,7 +10,7 @@ import SwiftUI
 import RxSwift
 import RxCocoa
 
-struct CalculatorViewRx: View {
+struct CalculatorView: View {
     
     // MARK: - Configuration
     
@@ -101,8 +101,8 @@ struct CalculatorViewRx: View {
     }
 }
 
-struct CalculatorViewRx_Previews: PreviewProvider {
+struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorViewRx()
+        CalculatorView()
     }
 }

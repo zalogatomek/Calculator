@@ -19,12 +19,11 @@ class CalculatorViewController: UIViewController {
     @IBOutlet private var resultLabel: UILabel!
     @IBOutlet private var buttons: [CalculatorButton]!
     
-    private let viewModel: CalculatorViewModel
+    private let viewModel: CalculatorViewModel = CalculatorViewModel()
     
     // MARK: - Lifecycle
     
-    init(viewModel: CalculatorViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: String(describing: Self.self), bundle: nil)
     }
     

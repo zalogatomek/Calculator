@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CalculatorViewControllerRx: UIViewController {
+class CalculatorViewController: UIViewController {
     
     // MARK: - Configuration
     
@@ -21,13 +21,12 @@ class CalculatorViewControllerRx: UIViewController {
     @IBOutlet private var resultLabel: UILabel!
     @IBOutlet private var buttons: [CalculatorButton]!
     
-    private let viewModel: CalculatorViewModelRx
+    private let viewModel: CalculatorViewModelRx = CalculatorViewModelRx()
     private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
-    init(viewModel: CalculatorViewModelRx) {
-        self.viewModel = viewModel
+    init() {
         super.init(nibName: String(describing: Self.self), bundle: nil)
     }
     

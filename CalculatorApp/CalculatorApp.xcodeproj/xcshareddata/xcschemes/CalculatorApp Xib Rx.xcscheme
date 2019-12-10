@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65C66759239E7166004916AC"
-               BuildableName = "Calculator SwiftUI.app"
-               BlueprintName = "CalculatorApp SwiftUI"
+               BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
+               BuildableName = "CalculatorApp Xib Rx.app"
+               BlueprintName = "CalculatorApp Xib Rx"
                ReferencedContainer = "container:CalculatorApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65C66759239E7166004916AC"
-            BuildableName = "Calculator SwiftUI.app"
-            BlueprintName = "CalculatorApp SwiftUI"
+            BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
+            BuildableName = "CalculatorApp Xib Rx.app"
+            BlueprintName = "CalculatorApp Xib Rx"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65C66759239E7166004916AC"
-            BuildableName = "Calculator SwiftUI.app"
-            BlueprintName = "CalculatorApp SwiftUI"
+            BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
+            BuildableName = "CalculatorApp Xib Rx.app"
+            BlueprintName = "CalculatorApp Xib Rx"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
