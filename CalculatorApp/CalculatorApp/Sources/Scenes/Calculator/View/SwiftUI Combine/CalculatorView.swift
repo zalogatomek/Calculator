@@ -29,65 +29,21 @@ struct CalculatorView: View {
             Color(ThemeStore.current.backgroundColor)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .center, spacing: rowSpacing) {
-                ZStack {
-                    Image("Logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 200.0, height: nil)
-                }
-                .frame(minWidth: 0.0, maxWidth: .infinity,
-                       minHeight: 0.0, maxHeight: .infinity)
-                
-                Text(viewModel.result)
-                    .font(.title)
-                    .foregroundColor(Color(ThemeStore.current.textLight))
-                    .frame(minWidth: 0.0, maxWidth: .infinity,
-                           minHeight: 0.0, maxHeight: .infinity,
-                           alignment: .trailing)
-                
-                ForEach(inputLayout.rows, id: \.self) { row in
-                    GeometryReader { geometry in
-                        HStack(alignment: .center, spacing: self.columnSpacing) {
-                            ForEach(row, id: \CalculatorInputType.name) { inputType in
-                                CalculatorButtonRepresentable(
-                                    name: inputType.name,
-                                    kind: CalculatorButtonKindMapper.map(inputType: inputType),
-                                    action: {
-                                        self.viewModel.append(inputType)
-                                    })
-                                    .frame(width: self.widthForButton(inRow: row, withType: inputType, geometry: geometry))
-                            }
-                        }
-                    }
-                }
-            }
+            CalculatorContentView(result: $viewModel.result, buttonAction: { inputType in
+                self.viewModel.append(inputType)
+            })
             .padding(padding)
-        }
-    }
-    
-    // MARK: - Tools
-    
-    private func widthForButton(inRow row: [CalculatorInputType],
-                                withType inputType: CalculatorInputType,
-                                geometry: GeometryProxy) -> CGFloat
-    {
-        let maxColumns = CGFloat(inputLayout.rows.map{ $0.count }.max() ?? 4)
-        let maxSpacing = (maxColumns - 1) * columnSpacing
-        let columns = CGFloat(row.count)
-        let spacing = (columns - 1) * columnSpacing
-        let singleButtonWidth = (geometry.size.width - maxSpacing) / maxColumns
-        
-        if inputLayout.forceSingleWidthElements.contains(inputType) {
-            return singleButtonWidth
-        } else {
-            return geometry.size.width - spacing - ((columns - 1) * singleButtonWidth)
         }
     }
 }
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView()
+        Group {
+            CalculatorView()
+            
+            CalculatorView()
+                .previewDevice("iPhone SE")
+        }
     }
 }

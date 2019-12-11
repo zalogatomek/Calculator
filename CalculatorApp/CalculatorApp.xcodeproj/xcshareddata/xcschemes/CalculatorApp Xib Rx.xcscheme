@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
-               BuildableName = "CalculatorApp Xib Rx.app"
+               BuildableName = "Calculator Xib Rx.app"
                BlueprintName = "CalculatorApp Xib Rx"
                ReferencedContainer = "container:CalculatorApp.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
-            BuildableName = "CalculatorApp Xib Rx.app"
+            BuildableName = "Calculator Xib Rx.app"
             BlueprintName = "CalculatorApp Xib Rx"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65CB3C0C239FD9F800B5CC29"
-            BuildableName = "CalculatorApp Xib Rx.app"
+            BuildableName = "Calculator Xib Rx.app"
             BlueprintName = "CalculatorApp Xib Rx"
             ReferencedContainer = "container:CalculatorApp.xcodeproj">
          </BuildableReference>
