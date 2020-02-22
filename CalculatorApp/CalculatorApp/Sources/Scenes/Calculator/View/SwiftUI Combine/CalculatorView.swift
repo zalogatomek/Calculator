@@ -13,8 +13,6 @@ struct CalculatorView: View {
     
     // MARK: - Configuration
     
-    private let rowSpacing: CGFloat = 8.0
-    private let columnSpacing: CGFloat = 8.0
     private let padding: CGFloat = 20.0
     
     // MARK: - Properties
@@ -41,9 +39,12 @@ struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CalculatorView()
-            
-            CalculatorView()
-                .previewDevice("iPhone SE")
+
+//            CalculatorView()
+//                .previewDevice("iPhone SE")
+
+//            CalculatorView()
+//                .previewLayout(.fixed(width: 200, height: 300))
         }
     }
 }

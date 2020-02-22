@@ -14,8 +14,6 @@ struct CalculatorView: View {
     
     // MARK: - Configuration
     
-    private let rowSpacing: CGFloat = 8.0
-    private let columnSpacing: CGFloat = 8.0
     private let padding: CGFloat = 20.0
     
     // MARK: - Properties
